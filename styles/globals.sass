@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,800;1,6..96,400&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400&display=swap')
+
+$primary: #ff9999
+$secondary: #fee503
+
+$bgdark: #0D0D0D
+$bglight: whitesmoke
+
+$grad: linear-gradient(141deg, $primary 6%, $secondary 94%)
+$grad2: linear-gradient(96deg, $primary 6%, $secondary 94%)
+$scrollgrad: linear-gradient(180deg, $primary, $secondary)
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  list-style: none
+  text-decoration: none
+  font-family: 'Nunito'
+  color: white
+  transition-duration: 120ms
+  //text-rendering: optimizeSpeed
+  
+  &::selection
+    background: #060606bb
+
+::-webkit-scrollbar
+  background: transparent
+  width: 6px
+
+::-webkit-scrollbar-thumb
+  background: $scrollgrad
+  background-attachment: fixed
+  border-radius: 8px
+
+  &:hover
+    visibility: visible
+  
+html
+  scroll-behavior: smooth
+  overflow-y: overlay
+
+body
+  position: relative
+  margin: 0 auto
+  background: $bgdark
+  //overflow-y: hidden
+
+  mainf
+    position: relative
+    //overflow-y: hidden
+  
+  header
+    position: sticky
+    top: 0
+    z-index: 10
+
+  article
+    display: inline-block
+    //overflow: auto
+
+section
+  min-height: 100vh
+  max-width: 380px
+  margin: 0 auto
+  padding: 0 0.8rem
+  padding-top: 120px
+  padding-bottom: 60px
+
+h1, h2, h3, h4, h5
+  font-family: 'Bodoni Moda'
+
+h1
+  font-size: 2.87rem
+  
+h2
+  font-size: 1.1rem
+
+p
+  text-align: justify
+  max-width: 45ch
+  margin-bottom: 26px
+
+a
+  opacity: 1
+  
+  &:hover
+    opacity: 0.7
+  &:active
+    opacity: 0.5 !important
+
+.container
+  position: relative
+  max-width: 1024px
+  margin: 0 auto
+  padding: 0 0.8rem
+
+.grad
+  h1, h2, h6, a, p, .line
+    background: $grad
+    background-attachment: fixed !important
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    //filter: hue-rotate(123deg) saturate(2.5)
+
+.cta
+  -webkit-text-fill-color: inherit !important
+
+.liner
+  :w
+  
+.line
+  position: relative
+  -webkit-background-clip: inherit !important
+  width: 88%
+  margin-inline: auto
+  height: 1px
+  margin-top: 80px
+
+  &::before, &::after
+    content: url('../public/romb.svg')
+    position: absolute
+    //background: inherit
+    //clip-path: url('../public/romb.svg#romb')
+    //background: $grad2
+    
+    left: 0
+    top: -2px
+
+  &::after
+    left: initial
+    right: -2px
+
+
+
