@@ -9,7 +9,7 @@ $bgdark: #0D0D0D
 $bglight: whitesmoke
 
 $grad: linear-gradient(141deg, $primary 6%, $secondary 94%)
-$grad2: linear-gradient(96deg, $primary 6%, $secondary 94%)
+$grad2: linear-gradient(130.36deg, #CC7E66 14.09%, #87187C 86.86%, #E052D2 86.86%), #803720
 $scrollgrad: linear-gradient(180deg, $primary, $secondary)
 
 *
@@ -41,6 +41,7 @@ $scrollgrad: linear-gradient(180deg, $primary, $secondary)
 html
   scroll-behavior: smooth
   overflow-y: overlay
+  animation: huerot 8s infinite
 
 body
   position: relative
@@ -99,7 +100,7 @@ a
 
 .grad
   h1, h2, h6, a, p, .line
-    background: $grad
+    background: $grad2
     background-attachment: fixed !important
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
@@ -108,9 +109,6 @@ a
 .cta
   -webkit-text-fill-color: inherit !important
 
-.liner
-  :w
-  
 .line
   position: relative
   -webkit-background-clip: inherit !important
@@ -133,5 +131,10 @@ a
     left: initial
     right: -2px
 
+@keyframes huerot
+  from
+    filter: saturate(1.3) hue-rotate(0deg)
+  to
+    filter: saturate(1.3) hue-rotate(360deg)
 
 
