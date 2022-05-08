@@ -5,6 +5,7 @@ const nextConfig = {
 	path: '',
   },
   reactStrictMode: true,
+  assetPrefix: isProd ? 'https://cristianjuarezz.github.io' : '',
 }
 
 module.exports = nextConfig

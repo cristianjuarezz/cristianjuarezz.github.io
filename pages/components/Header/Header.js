@@ -6,7 +6,7 @@ export default function Header (){
 	return (
 		<header className={styles.container}>
 			<Head>
-				<title>We are Majin</title>
+				<title>Cristian Juarez</title>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			</Head>
 		</header>
