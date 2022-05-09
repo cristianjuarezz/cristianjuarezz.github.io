@@ -14,7 +14,7 @@ export default function Home() {
 					<h2>Software Developer</h2>
 					<div className="line"></div>
 					<div className="bow">
-						<a href="https://github.com/cristianjuarezz" target="_blank"><Bow/></a>
+						<a href="https://github.com/cristianjuarezz" target="_blank" rel="noreferrer noopener"><Bow/></a>
 					</div>
 					<span className={styles.quote}>I build software solutions from <b>websites</b> to mobile <b>apps</b> with pleasing <b>UI/UX</b> and clever <b>backend</b> design.</span>
 					<Social/>
