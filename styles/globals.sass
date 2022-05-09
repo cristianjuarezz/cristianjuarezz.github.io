@@ -32,6 +32,7 @@ $scrollgrad: linear-gradient(180deg, $primary, $secondary)
 
 ::-webkit-scrollbar-thumb
   background: $scrollgrad
+  background: transparent
   background-attachment: fixed
   border-radius: 8px
 
@@ -41,7 +42,7 @@ $scrollgrad: linear-gradient(180deg, $primary, $secondary)
 html
   scroll-behavior: smooth
   overflow-y: overlay
-  animation: huerot 8s infinite
+  animation: huerot 10s infinite
 
 body
   position: relative
@@ -59,7 +60,7 @@ body
     z-index: 10
 
   article
-    display: inline-block
+    //display: inline-block
     //overflow: auto
 
 section
@@ -99,12 +100,19 @@ a
   padding: 0 0.8rem
 
 .grad
-  h1, h2, h6, a, p, .line
+  h1, h2, h6, a, p, span, .line, .bow
     background: $grad2
     background-attachment: fixed !important
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
     //filter: hue-rotate(123deg) saturate(2.5)
+.bow
+    display: flex
+    width: fit-content
+    margin-inline: auto
+    margin-top: 3rem
+    -webkit-background-clip: unset !important
+    clip-path: url(#bow)
 
 .cta
   -webkit-text-fill-color: inherit !important
