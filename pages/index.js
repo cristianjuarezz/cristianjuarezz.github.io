@@ -18,7 +18,6 @@ export default function Home() {
 					</div>
 					<span className={styles.quote}>I build software solutions from <b>websites</b> to mobile <b>apps</b> with pleasing <b>UI/UX</b> and clever <b>backend</b> design.</span>
 					<Social/>
-					<h6></h6>
 				</article>
 			</section>
 		</main>
