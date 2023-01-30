@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap')
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+*
+  box-sizing: border-box
+  list-style-type: none
+  text-decoration: none
+  color: var(--color)
+  text-rendering: optimizeSpeed
+
+:root
+  --primary: #FF5B83
+  --secondary: #002EA4
+  --background: white
+  --color: black
+  --p-inline: 15vw
+  --img-saturate: 1
+  --selection: #1D1D1D22
+  --cta-color: #F8CEC8
+  --shadow: #0002
+  --theme-transition: 800ms ease-in-out
+  --bg: url('./../public/background.webp')
+  font-family: 'Poppins', sans-serif
+  font-size: 14px
+  scroll-snap-type: y mandatory
+  scroll-behavior: smooth !important
+  overflow-y: overlay
+  overflow-x: hidden
+  
+  hr
+    border-color: #000
+    opacity: 0.4
+
+  .invert
+    filter: invert(1)
+    transition: var(--theme-transition)
+
+  .invert-reverse
+    filter: invert(0) drop-shadow(0px 0px 8px #000e)
+    transition: var(--theme-transition)
+
+  &:window-inactive
+    display: none
+
+  @media (max-width: 768px)
+    --p-inline: 5vw
+
+  .dark
+    --background: #1D1D1D
+    --color: white
+    --img-saturate: 0
+    --selection: #00000066
+    --invert: 0
+    --cta-color: #282828
+    --shadow: #fff2
+
+    hr
+      border-color: inherit
+
+    nav > a::after
+      background: white
+
+    .filter-badge
+      filter: grayscale(1) brightness(2) invert(0)
+
+    .invert
+      filter: invert(0)
+
+    .invert-reverse
+      filter: invert(1) drop-shadow(0px 0px 30px #fff6)
+
+    .hero
+      img:not(.invert-half, .filter-badge)
+        color: var(--background)
+
+      .invert-half
+        filter: invert(1) 
+
+::-webkit-scrollbar
+  width: 1.3rem
+
+::-webkit-scrollbar-thumb
+  background: linear-gradient(to bottom, transparent 25%, black 80%)
+  background-attachment: fixed
+  height: 1em
+  border: 0.4em solid rgba(0, 0, 0, 0)
+  background-clip: padding-box
+  -webkit-border-radius: 1em
+  background-color: rgba(0, 0, 0, 0)
+  -webkit-box-shadow: inset 0 0 0 1px rgb(0 0 0 / 3%)
+
+.dark ::-webkit-scrollbar-thumb
+    background: linear-gradient(to bottom, transparent 25%, white 80%)
+
+::selection
+  background: var(--selection)
+
+::placeholder
+  color: var(--color) !important
+  opacity: 0.5 !important
+
+body
+  perspective: 600px
+
+  &::before
+    content: ''
+    background: var(--bg)
+    background-attachment: fixed
+    background-size: cover
+    background-position: center
+    position: fixed
+    inset: 0
+    z-index: -10
+    filter: invert(1) saturate(0.6) hue-rotate(190deg)
+    transition: var(--theme-transition)
+
+  &:has(.dark)::before
+    filter: invert(0) saturate(0) hue-rotate(350deg)
+
+  nav
+    display: flex
+    position: absolute
+    width: 100%
+    justify-content: space-between
+    padding-top: 1.25rem
+    padding-inline: var(--p-inline)
+
+    > a
+      color: var(--color)
+      position: relative
+
+      &:hover::after
+        transform: scaleX(1)
+        transform-origin: bottom center
+
+      &::after
+        content: ''
+        position: absolute
+        width: 100%
+        transform: scaleX(0)
+        height: 1px
+        bottom: 0
+        left: 0
+        background: black
+        transform-origin: bottom right
+        transition: transform 250ms ease-out
+
+    ul
+      display: flex
+      gap: 1.5rem
+
+      a, span
+        transition-duration: 200ms
+        font-size: 0.8rem
+
+  main
+    min-height: 100vh
+
+    section
+      padding-inline: var(--p-inline)
+      scroll-snap-align: start
+      padding-bottom: 4rem
+
+      > h4
+        user-select: none
+
+      &:nth-child(even)
+        backdrop-filter: blur(10px) saturate(0.5) brightness(0.8)
+
+    .unahur
+      overflow: hidden
+      height: 60px
+      object-fit: cover
+      object-position: top
+
+    .hero
+      display: grid
+
+      h1
+        pointer-events: none
+
+      .filter-badge
+        filter: grayscale(1) brightness(2) invert(1)
+
+      img
+        pointer-events: none
+        user-select: none
+        filter: drop-shadow(0px 0px 6px #00000088)
+
+        &.invert-half
+          filter: invert(1)
+          z-index: -10
+
+      a
+        border: 1px solid var(--color)
+        backdrop-filter: blur(2px)
+        font-weight: 600
+        color: var(--color)
+        margin-top: 2rem
+        width: min-content
+        
+      article
+        display: grid
+        align-content: center
+
+        &.content-start
+          align-content: start
+
+    #portfolio
+      div div
+        display: flex
+        transition-delay: 160ms
+        transition-duration: 500ms
+
+        img
+          transition-duration: 360ms
+          transition-timing-function: cubic-bezier(0.60, -0.75, 0.38, 1.60)
+          aspect-ratio: 16/10
+          cursor: pointer
+          border-radius: 2rem
+          border-bottom-left-radius: 0
+          border-top-right-radius: 0
+          box-shadow: 12px 12px 0px var(--shadow)
+
+          @media (max-width: 768px)
+            scroll-snap-align: start
+            scroll-margin-top: 3rem
+
+        &:hover
+          flex-grow: 1.5
+
+          img
+            z-index: 1
+            animation: bounce 500ms ease
+            transition-delay: 160ms
+            animation-delay: 160ms
+            border-radius: 2rem
+            box-shadow: -12px -12px 0px var(--shadow)
+
+  .cta
+    transition: 330ms cubic-bezier(0.09, 0.46, 0.88, 0.57)
+    text-shadow: 0px -1px 0px var(--color)
+    position: relative
+    overflow: hidden
+    outline: none
+
+    &::before
+      content: ''
+      z-index: -1
+      position: absolute
+      left: -5%
+      bottom: -100%
+      aspect-ratio: 1/1
+      background: var(--color)
+      width: 0px
+      border-radius: 10rem
+      transition: 500ms cubic-bezier(0.09, 0.46, 0.88, 0.57)
+
+    &:hover, &:focus
+      color: var(--cta-color)
+      text-shadow: 0px -1px 0px var(--cta-color)
+
+      &::before
+        width: 200%
+        bottom: -250%
+        left: -50%
+
+button, input, optgroup, select, textarea
+  background: transparent
+  border: 1px solid
+  border-radius: 1.5rem
+  border-bottom-left-radius: 0
+  padding: 0.5rem
+  padding-inline: 2rem
+  margin-bottom: 1rem
+  width: 100%
+  outline: none
+
+h1
+  font-size: 1.5rem
+
+h5
+  font-size: 0.7rem
+
+a
+  font-weight: 500
+
+  &.black
+    font-weight: 700
+
+  &:hover
+    color: var(--primary)
+
+@keyframes bounce
+  0%
+    transform: scaleY(1)
+  30%
+    transform: scaleY(1.1)
+  100%
+    transform: scaleY(1)

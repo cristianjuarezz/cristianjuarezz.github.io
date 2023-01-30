@@ -1,7 +1,25 @@
 {
-  "extends": "next/core-web-vitals",
-  "rules": {
-    // Other rules
-    "@next/next/no-img-element": "off"
-  }
+  "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "next/core-web-vitals"
+    ],
+    "overrides": [],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["react"],
+    "rules": {
+        "@next/next/no-img-element": "off",
+        "no-useless-escape": "off",
+        "no-undefined": "off",
+        "react/no-unescaped-entities": "off",
+        "no-unused-vars": "off"
+    }
 }
