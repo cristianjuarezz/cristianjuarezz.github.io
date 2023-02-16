@@ -88,10 +88,11 @@ export default function Home({projects}) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const token = "secret_WoVxiKBB2B1NuOOLb9bXetALJfRYGdFEInGxZk03thA"
   const data = await fetch("https://api.notion.com/v1/databases/2f777e3d6360452dae7d1645b1dd4057/query", {
     method: 'POST',
     headers: {
-      'Authorization': 'Bearer '+process.env.NOTION_TOKEN,
+      'Authorization': 'Bearer '+token,
       'Notion-Version': '2022-06-28',
       'Content-Type': 'application/json'
     }
