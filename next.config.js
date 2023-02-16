@@ -10,6 +10,11 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-  },}
+  },
+  env: {
+    NOTION_TOKEN: process.env.NOTION_TOKEN,
+    PROJECTS_DB: process.env.PROJECTS_DB
+  }
+}
 
 module.exports = nextConfig
