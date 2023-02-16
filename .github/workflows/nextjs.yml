@@ -32,8 +32,7 @@ jobs:
         uses: actions/checkout@v3
       - name: next-env
         # You may pin to the exact commit or the version.
-        # uses: natterstefan/action-next-env@e84b8fc295901af5aa1a75fd27c4e01ff8c8e6ad
-        uses: natterstefan/action-next-env@v1
+        uses: natterstefan/action-next-env@c3a1d20cdca31148b3bfc451a5900555151c64fd
         with:
           # Define which environment you want to load: development, test or production.
           environment: github-pages
