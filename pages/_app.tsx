@@ -1,8 +1,7 @@
 import '../styles/master.sass'
-import Layout from './_layout';
-
+import Layout from './_layout'
 import type { AppProps } from 'next/app'
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/router'
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -11,7 +10,6 @@ export default function App({ Component, pageProps }: AppProps) {
     enter: { opacity: 1, x: 0, y: 0 },
     exit: { opacity: 1, x: -2000, y: 0 },
   }
-
   return (
     <AnimatePresence>
       <Layout>
