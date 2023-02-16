@@ -7,7 +7,7 @@ import { ClientDataContext } from '../components/DataContext'
 
 export default function Home({projects}) {
   const LadyJustice = dynamic(() => import('../components/LadyJustice'))
-  const Projects = dynamic(() => import('./home/Projects'))
+  const Projects = dynamic(() => import('../components/home/Projects'))
   const [hasContacted, setHasContacted] = useState(false)
   const dataContext = useContext(ClientDataContext)
   
@@ -107,5 +107,5 @@ export const getStaticProps: GetStaticProps = async () => {
       alt: '' || properties.Caption.rich_text[0]?.plain_text,
     }
   })
-  return { props: {projects}, revalidate: 60 }
+  return { props: {projects}, revalidate: 1, fallback: false }
 }
