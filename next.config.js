@@ -10,6 +10,7 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    unoptimized: true
   },
   env: {
     NOTION_TOKEN: process.env.NOTION_TOKEN,
