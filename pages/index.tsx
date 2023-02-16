@@ -88,7 +88,7 @@ export default function Home({projects}) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await fetch(process.env.PROJECTS_DB+'', {
+  const data = await fetch("https://api.notion.com/v1/databases/2f777e3d6360452dae7d1645b1dd4057/query", {
     method: 'POST',
     headers: {
       'Authorization': 'Bearer '+process.env.NOTION_TOKEN,
