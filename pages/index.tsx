@@ -3,11 +3,11 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useContext, useState } from 'react'
-import { ClientDataContext } from '../components/DataContext'
+import { ClientDataContext } from '../DataContext'
 
 export default function Home({projects}) {
-  const LadyJustice = dynamic(() => import('../components/LadyJustice'))
-  const Projects = dynamic(() => import('../components/home/Projects'))
+  const LadyJustice = dynamic(() => import('./components/LadyJustice'))
+  const Projects = dynamic(() => import('./components/home/Projects'))
   const [hasContacted, setHasContacted] = useState(false)
   const dataContext = useContext(ClientDataContext)
   
@@ -107,5 +107,5 @@ export const getStaticProps: GetStaticProps = async () => {
       alt: '' || properties.Caption.rich_text[0]?.plain_text,
     }
   })
-  return { props: {projects}, revalidate: 1, fallback: false }
+  return { props: {projects}, revalidate: 1 }
 }
