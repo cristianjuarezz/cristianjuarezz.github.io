@@ -30,11 +30,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Set ENV
-        run: |
-          echo "ENV WAS SET"
-        env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+      - name: next-env
+        # You may pin to the exact commit or the version.
+        # uses: natterstefan/action-next-env@e84b8fc295901af5aa1a75fd27c4e01ff8c8e6ad
+        uses: natterstefan/action-next-env@v1
+        with:
+          # Define which environment you want to load: development, test or production.
+          environment: github-pages
       - name: Detect package manager
         id: detect-package-manager
         run: |
