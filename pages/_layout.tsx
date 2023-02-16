@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { ClientDataContextProvider } from '../components/DataContext'
+import { ClientDataContextProvider } from '../DataContext'
 
 export default function Layout ({children}){
   const [theme, setTheme] = useState(false)
