@@ -108,5 +108,5 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   }) || []
 
-  return { props: {projects}, revalidate: 10 }
+    return { props: {projects}, revalidate: 1 }
 }
