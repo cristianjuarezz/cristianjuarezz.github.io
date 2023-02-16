@@ -103,7 +103,7 @@ export const getStaticProps: GetStaticProps = async () => {
       description: '' || properties.Description.rich_text[0]?.plain_text,
       source: '' || properties.Source.url,
       code: '' || properties.Code.url,
-      img: '' || properties.Image.files[0]?.file.url,
+      img: '' || properties.Image.files[0]?.file?.url,
       alt: '' || properties.Caption.rich_text[0]?.plain_text,
     }
   })
