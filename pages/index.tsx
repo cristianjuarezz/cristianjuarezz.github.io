@@ -97,7 +97,7 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   }).then(res => res.json()).then(data => data.results)
 
-  const projects = data.map( ({properties}) => {
+  const projects = data?.map( ({properties}) => {
     return {
       name: '' || properties.Name.title[0]?.plain_text,
       description: '' || properties.Description.rich_text[0]?.plain_text,
