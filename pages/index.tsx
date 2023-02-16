@@ -99,13 +99,14 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const projects = data?.map( ({properties}) => {
     return {
-      name: '' || properties.Name.title[0]?.plain_text,
-      description: '' || properties.Description.rich_text[0]?.plain_text,
-      source: '' || properties.Source.url,
-      code: '' || properties.Code.url,
-      img: '' || properties.Image.files[0]?.file?.url,
-      alt: '' || properties.Caption.rich_text[0]?.plain_text,
+      name: properties.Name.title[0]?.plain_text || '',
+      description: properties.Description.rich_text[0]?.plain_text || '',
+      source: properties.Source.url || '',
+      code: properties.Code.url || '',
+      img: properties.Image.files[0]?.file?.url || '',
+      alt: properties.Caption.rich_text[0]?.plain_text || '',
     }
-  })
-  return { props: {projects: projects || []}, revalidate: 1 }
+  }) || []
+
+  return { props: {projects}, revalidate: 10 }
 }
