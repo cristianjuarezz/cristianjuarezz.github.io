@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useContext, useState } from 'react'
-import { ClientDataContext } from '../DataContext'
+import { ClientDataContext } from './../DataContext'
 
 export default function Home({projects}) {
   const LadyJustice = dynamic(() => import('./components/LadyJustice'))
