@@ -30,12 +30,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: next-env
-        # You may pin to the exact commit or the version.
-        uses: natterstefan/action-next-env@c3a1d20cdca31148b3bfc451a5900555151c64fd
-        with:
-          # Define which environment you want to load: development, test or production.
-          environment: github-pages
       - name: Detect package manager
         id: detect-package-manager
         run: |
@@ -80,6 +74,8 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
@@ -92,8 +88,6 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    env:
-      NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
     runs-on: ubuntu-latest
     needs: build
     steps:
