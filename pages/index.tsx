@@ -107,5 +107,5 @@ export const getStaticProps: GetStaticProps = async () => {
       alt: '' || properties.Caption.rich_text[0]?.plain_text,
     }
   })
-  return { props: {projects}, revalidate: 1 }
+  return { props: {projects: projects || null}, revalidate: 1 }
 }
