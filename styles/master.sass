@@ -76,6 +76,9 @@
     --cta-color: #511E27
     --shadow: #fff2
 
+    textarea::-webkit-scrollbar
+      display: none
+
     hr
       border-color: inherit
 
@@ -196,9 +199,6 @@ body
       > h4
         user-select: none
 
-      &:nth-child(even)
-        backdrop-filter: blur(10px) saturate(0.5) brightness(0.8)
-
     .unahur
       overflow: hidden
       height: 60px
@@ -248,7 +248,7 @@ body
           aspect-ratio: 1/1
           object-fit: cover
           cursor: pointer
-          border-radius: 10rem
+          border-radius: 900rem
           //box-shadow: 12px 12px 0px var(--shadow)
 
           @media (max-width: 768px)

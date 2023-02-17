@@ -43,7 +43,7 @@ export default function Projects(){
         >
           {
             projects?.map((project: any, index: any) => {
-              return <div key={index} className='w-[80vw] mx-auto md:w-auto md:h-3/6 basis-auto md:basis-[15vw]'><img draggable='false' className='object-cover md:object-fill' onClick={() => switchProject(index)} src={project.img} alt={project.alt} /></div>
+              return <div key={index} className='w-[80vw] mx-auto md:w-auto md:h-3/6 basis-auto md:basis-[18vw]'><img draggable='false' className='object-cover md:object-fill' onClick={() => switchProject(index)} src={project.img} alt={project.alt} /></div>
             })
           }
         </Transition>
