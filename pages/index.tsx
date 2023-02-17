@@ -1,11 +1,10 @@
-import { GetStaticProps } from 'next'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useContext, useState } from 'react'
 import { ClientDataContext } from './../DataContext'
 
-export default function Home({projects}) {
+export default function Home() {
   const LadyJustice = dynamic(() => import('./components/LadyJustice'))
   const Projects = dynamic(() => import('./components/home/Projects'))
   const [hasContacted, setHasContacted] = useState(false)
@@ -54,7 +53,7 @@ export default function Home({projects}) {
         </article>
       </section>
       <section id='portfolio' className='pt-24 min-h-screen relative blur-bg'>
-        <Projects projects={projects}/>
+        <Projects/>
       </section>  
       <section id='contact' className='pt-20 min-h-screen relative'>
         <h2 className='text-center font-semibold text-xl md:text-3xl mb-12'>A designer, maker and problem solver</h2>
@@ -85,29 +84,4 @@ export default function Home({projects}) {
       </section>
     </>
   )
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const token = "secret_WoVxiKBB2B1NuOOLb9bXetALJfRYGdFEInGxZk03thA"
-  const data = await fetch("https://api.notion.com/v1/databases/2f777e3d6360452dae7d1645b1dd4057/query", {
-    method: 'POST',
-    headers: {
-      'Authorization': 'Bearer '+token,
-      'Notion-Version': '2022-06-28',
-      'Content-Type': 'application/json'
-    }
-  }).then(res => res.json()).then(data => data.results)
-
-  const projects = data?.map( ({properties}) => {
-    return {
-      name: properties.Name.title[0]?.plain_text || '',
-      description: properties.Description.rich_text[0]?.plain_text || '',
-      source: properties.Source.url || '',
-      code: properties.Code.url || '',
-      img: properties.Image.files[0]?.file?.url || '',
-      alt: properties.Caption.rich_text[0]?.plain_text || '',
-    }
-  }) || []
-
-    return { props: {projects}, revalidate: 1 }
 }
