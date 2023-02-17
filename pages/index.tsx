@@ -78,7 +78,7 @@ export default function Home() {
             <input type="email" name="email" placeholder='johndoe@somewhere.com' required/><br/>
             <textarea className='p-8 text-justify' name="message" placeholder='Hey there!' minLength={30} autoCapitalize='sentences' cols={30} rows={5} required></textarea>
             <button className={(hasContacted)?'hidden':'cta'} type="submit">Let's do it!</button>
-            <span className={(!hasContacted)?'hidden':'pointer-events-none select-none'}>Your message is flying to my postmail ~</span>
+            <span className={(!hasContacted)?'hidden':'pointer-events-none select-none text-sm font-light'}>A little bird delivered the message..</span>
           </form>
         </div>
       </section>
