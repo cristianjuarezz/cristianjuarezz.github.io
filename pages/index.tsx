@@ -68,7 +68,7 @@ export default function Home() {
             <ul className='flex gap-6 mt-8'>
               <li><Link href='https://www.linkedin.com/in/cristian-juarez-dev' target='_blank'>LinkedIn</Link></li>
               <li><Link href='https://github.com/cristianjuarezz' target='_blank'>Github</Link></li>
-              <li><Link href='https://t.me/MrSatoshiDev' target='_blank'>Telegram</Link></li>
+              <li><Link href='https://t.me/JCristianDev' target='_blank'>Telegram</Link></li>
             </ul>
           </div>
           <form onSubmit={submitter} action='' method="POST">
