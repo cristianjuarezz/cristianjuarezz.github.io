@@ -9,7 +9,7 @@ export default function Layout ({children}){
   useEffect(() => {
     const stored = localStorage.getItem('theme')
     setTheme(stored ? JSON.parse(stored) : theme)
-  }, [])
+  })
 
   const switchTheme = () => {
     setTheme(!theme)
