@@ -13,20 +13,19 @@ export default function Projects(){
     setIsShowing(true)
   }
 
-  async function fetchProjects(){
-    const newProjects = await fetch('https://primrose-backend.vercel.app/api/notion/projects')
-      .then(res => res.json())
-      .then(projects => projects['newProjects'])
-      .catch(err => console.log(err))
-
-    if(!isShowing) setProjects(newProjects?.reverse())
-
-    /*setTimeout(() => {
-      fetchProjects()
-    }, 20000)*/
-  }
-
   useEffect(()=>{
+    async function fetchProjects(){
+      const newProjects = await fetch('https://primrose-backend.vercel.app/api/notion/projects')
+        .then(res => res.json())
+        .then(projects => projects['newProjects'])
+        .catch(err => console.log(err))
+
+      if(!isShowing) setProjects(newProjects?.reverse())
+
+      /*setTimeout(() => {
+        fetchProjects()
+      }, 20000)*/
+    }
     fetchProjects()
   },[])
 
