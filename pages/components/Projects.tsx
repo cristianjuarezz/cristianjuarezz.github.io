@@ -27,7 +27,7 @@ export default function Projects(){
       }, 20000)*/
     }
     fetchProjects()
-  },[])
+  })
 
   return (!projects || projects?.length == 0)?<h1 className="text-center font-bold">Waiting for projects...</h1>:(
     <>
