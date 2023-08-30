@@ -19,7 +19,7 @@ export default function Projects(){
       .then(projects => projects['newProjects'])
       .catch(err => console.log(err))
 
-    if(!isShowing) setProjects(newProjects.reverse())
+    if(!isShowing) setProjects(newProjects?.reverse())
 
     /*setTimeout(() => {
       fetchProjects()
