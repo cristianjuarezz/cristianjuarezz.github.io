@@ -27,11 +27,11 @@ export default function Projects(){
       }, 20000)*/
     }
     fetchProjects()
-  })
+  }, [isShowing])
 
   return (!projects || projects?.length == 0)?<h1 className="text-center font-bold">Waiting for projects...</h1>:(
     <>
-      <h2 className='text-center md:hidden font-bold md:text-2xl mb-8 md:mb-12 cursor-default'>{(!isShowing)?"Take a look at my works":projects[selectedProjectIndex]?.name}</h2>
+      <h2 className='text-center font-bold md:text-2xl mb-8 md:mb-12 cursor-default'>{(!isShowing)?"Take a look at my works":projects[selectedProjectIndex]?.name}</h2>
       <Transition
           show={!isShowing}
           enter="transition duration-[300ms] delay-[300ms]"
@@ -59,11 +59,11 @@ export default function Projects(){
           leave="transition duration-[300ms] ease-in-out"
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
-          className="px-6 md:px-20 mb-60 md:mb-14"
+          className="px-6 md:px-28 mb-14"
         >
           <article className='grid grid-cols-1 gap-6'>
             <div className='flex-col items-start'>
-              <h3 className='text-base mb-4 font-bold'>{projects[selectedProjectIndex]?.alt}</h3>
+              <h3 className='text-base mb-4 font-bold hidden'>{projects[selectedProjectIndex]?.alt}</h3>
               <Image draggable='false' width={600} height={400} className='object-contain w-fit h-auto rounded-2xl rounded-bl-none mb-8' src={projects[selectedProjectIndex]?.img} alt={projects[selectedProjectIndex]?.alt}/>
               <p className='text-sm text-justify tracking-wide mb-12'>{projects[selectedProjectIndex]?.description}</p>
               <div className="flex flex-row gap-4 flex-wrap">

@@ -17,7 +17,7 @@ export default function KeywordsCloud(){
   }
 
   return (
-    <div className="relative select-none ml-[18vh] z-[-10] blur-[4px] md:blur-0 opacity-60 md:opacity-100 translate-y-[-22vh] md:translate-y-0 md:mt-24">
+    <div className="relative select-none ml-[18vh] z-[-10] blur-[4px] md:blur-0 opacity-60 md:opacity-100 translate-y-[-22vh] md:translate-y-0 md:mt-20">
     {
       keywords.map((keyword, index) => {
         const keywordAngle = (clampedAngle(index) * 32) + "deg"
