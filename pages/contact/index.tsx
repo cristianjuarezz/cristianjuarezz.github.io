@@ -37,7 +37,7 @@ export default function Projects(){
       <Head>
         <title>𝐂𝐫𝐢𝐬𝐭𝐢𝐚𝐧 • Contact</title>
       </Head>
-      <section className='h-screen py-28 px-6 md:px-24'>
+      <section className='pt-28 pb-6 px-6 md:px-24'>
         <div className='flex gap-10'>
           <form className='flex flex-col w-full gap-4' onSubmit={submitter} action='' method="POST">
             <input type="text" name="_honey" className='hidden'/>
