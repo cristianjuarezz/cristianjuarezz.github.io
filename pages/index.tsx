@@ -1,6 +1,5 @@
 import Projects from './components/Projects'
 import Head from 'next/head'
-//import LadyJustice from './components/LadyJustice'
 
 export default function Home() {
 
