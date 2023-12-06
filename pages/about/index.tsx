@@ -9,7 +9,7 @@ export default function Blog() {
         <title>𝐂𝐫𝐢𝐬𝐭𝐢𝐚𝐧 • About</title>
       </Head>
       <section className='pt-28 pb-4 px-12 md:px-28 overflow-hidden md:overflow-visible'>
-        <img draggable='false' className='rounded-[10rem] aspect-square object-cover h-36 md:h-48 mx-auto mb-6' src="https://miro.medium.com/v2/resize:fit:1400/1*MSQC4H6IvdaL6TMF1XIwoA.jpeg" alt="" />
+        <img draggable='false' className='rounded-[10rem] aspect-square object-cover h-36 md:h-48 mx-auto mb-6' src="cristian-juarez.png" alt="" />
         <h1 className="text-center font-bold mb-8">A little bit about me</h1>
         <div className='keep-out md:rounded-[10rem] md:mx-36 dn'>
           <h3 className='text-center font-bold italic'>Keep out, I'm still working over here!</h3>
